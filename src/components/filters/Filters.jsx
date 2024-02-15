@@ -1,8 +1,17 @@
-function Filters() {
+function Filters({ handleFilterCharacter }) {
+  const handleInput = (event) => {
+    handleFilterCharacter(event.currentTarget.value);
+  };
+
   return (
     <form className="form">
       <label htmlFor="search">Buscar por nombre:</label>
-      <input type="text" id="search" placeholder="Buscar..." />
+      <input
+        type="text"
+        id="search"
+        placeholder="Buscar..."
+        onInput={handleInput}
+      />
       <label htmlFor="house">Filtrar por casa:</label>
       <select id="house">
         <option value="">Todas</option>

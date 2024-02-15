@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import "../scss/App.scss";
 import CharacterList from "./characters/CharacterList";
-import Filters from "./filters/filters";
+import Filters from "./filters/Filters";
 import CharacterDetail from "./characters/CharacterDetail";
 
 import { fetchCharacters } from "../services/fetch";
@@ -13,6 +13,7 @@ function App() {
   // 1. Variables de estado
 
   const [characters, setCharacters] = useState(ls.get("characters", []));
+  const [filterCharacter, setFilterCharacter] = useState("");
 
   // 2. useEffect
 
@@ -28,6 +29,17 @@ function App() {
   }, []);
 
   // 3. funciones de eventos
+
+  const handleFilterCharacter = (filterValue) => {
+    setFilterCharacter(filterValue);
+    console.log(filterValue);
+  };
+
+  // Filtrar personajes según el filtro de búsqueda
+  const filteredCharacters = characters.filter((character) =>
+    character.name.toLowerCase().includes(filterCharacter.toLowerCase())
+  );
+
   // 4. variables para el html
 
   const findCharacter = (id) => {
@@ -46,8 +58,8 @@ function App() {
             path="/"
             element={
               <>
-                <Filters />
-                <CharacterList characters={characters} />
+                <Filters handleFilterCharacter={handleFilterCharacter} />
+                <CharacterList characters={filteredCharacters} />
               </>
             }
           />
