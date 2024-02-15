@@ -41,9 +41,16 @@ function App() {
         <h1 className="header__tittle">Harry Potter</h1>
       </header>
       <main>
-        <Filters />
         <Routes>
-          <Route path="/" element={<CharacterList characters={characters} />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <Filters />
+                <CharacterList characters={characters} />
+              </>
+            }
+          />
           <Route
             path="/character/:id"
             element={<CharacterDetail findCharacter={findCharacter} />}
