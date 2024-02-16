@@ -82,6 +82,7 @@ function App() {
                 <Filters
                   handleFilterCharacter={handleFilterCharacter}
                   handleFilterHouse={handleFilterHouse}
+                  selectedHouse={filterHouse} // Pasar el estado de la casa seleccionada
                 />
                 <CharacterList characters={filteredCharacters} />
               </>
