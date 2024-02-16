@@ -14,7 +14,6 @@ function Filters({ handleFilterCharacter }) {
       />
       <label htmlFor="house">Filtrar por casa:</label>
       <select id="house">
-        <option value="">Todas</option>
         <option value="Gryffindor">Gryffindor</option>
         <option value="Slytherin">Slytherin</option>
         <option value="Hufflepuff">Hufflepuff</option>
