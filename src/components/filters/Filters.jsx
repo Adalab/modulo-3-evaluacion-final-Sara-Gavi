@@ -1,6 +1,10 @@
-function Filters({ handleFilterCharacter }) {
+function Filters({ handleFilterCharacter, handleFilterHouse }) {
   const handleInput = (event) => {
     handleFilterCharacter(event.currentTarget.value);
+  };
+
+  const handleInputHouse = (event) => {
+    handleFilterHouse(event.currentTarget.value);
   };
 
   return (
@@ -13,7 +17,7 @@ function Filters({ handleFilterCharacter }) {
         onInput={handleInput}
       />
       <label htmlFor="house">Filtrar por casa:</label>
-      <select id="house">
+      <select id="house" onInput={handleInputHouse}>
         <option value="Gryffindor">Gryffindor</option>
         <option value="Slytherin">Slytherin</option>
         <option value="Hufflepuff">Hufflepuff</option>

@@ -13,6 +13,7 @@ function App() {
 
   const [characters, setCharacters] = useState([]);
   const [filterCharacter, setFilterCharacter] = useState("");
+  const [filterHouse, setFilterHouse] = useState("Gryffindor");
 
   // 2. useEffect
 
@@ -33,14 +34,30 @@ function App() {
     }
   }, [filterCharacter]); // Se ejecutará cada vez que cambie filterCharacter
 
+  // useEffect para cargar personajes cuando cambia filterHouse
+  useEffect(() => {
+    fetch(`https://hp-api.onrender.com/api/characters/house/${filterHouse}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setCharacters(data);
+      });
+  }, [filterHouse]);
+
   // 3. funciones de eventos
 
   const handleFilterCharacter = (filterValue) => {
     setFilterCharacter(filterValue);
   };
 
-  // Filtrar personajes según el filtro de búsqueda
-  const filteredCharacters = characters.filter((character) =>
+  const handleFilterHouse = (value) => {
+    setFilterHouse(value);
+  };
+
+  const filteredCharactersHouse = characters.filter(
+    (character) => character.house === filterHouse
+  );
+
+  const filteredCharacters = filteredCharactersHouse.filter((character) =>
     character.name.toLowerCase().includes(filterCharacter.toLowerCase())
   );
 
@@ -62,7 +79,10 @@ function App() {
             path="/"
             element={
               <>
-                <Filters handleFilterCharacter={handleFilterCharacter} />
+                <Filters
+                  handleFilterCharacter={handleFilterCharacter}
+                  handleFilterHouse={handleFilterHouse}
+                />
                 <CharacterList characters={filteredCharacters} />
               </>
             }
