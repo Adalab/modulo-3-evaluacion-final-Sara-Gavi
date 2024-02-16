@@ -12,8 +12,8 @@ function CharacterCard({ character }) {
           src={character.image || placeholderImageURL}
           alt={character.name}
         />
-        <h2>{character.name}</h2>
-        <p>{character.species}</p>
+        <h2 className="card__name">{character.name}</h2>
+        <p className="card__species">{character.species}</p>
       </div>
     </Link>
   );

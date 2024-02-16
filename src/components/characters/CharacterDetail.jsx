@@ -14,14 +14,16 @@ function CharacterDetail({ findCharacter }) {
         src={character.image || placeholderImageURL}
         alt={character.name}
       />
-      <h2>{character.name}</h2>
-      <p>{character.alternate_names}</p>
-      <p>{character.species}</p>
-      <p>{character.house}</p>
-      <p>{character.alive ? "Vivo" : "Muerto"}</p>
-      <p>{character.gender}</p>
+      <h2 className="card__name">{character.name}</h2>
+      <p className="card__text">{character.alternate_names}</p>
+      <p className="card__text">{character.species}</p>
+      <p className="card__text">{character.house}</p>
+      <p className="card__text">{character.alive ? "Alive" : "Death"}</p>
+      <p className="card__text">{character.gender}</p>
 
-      <Link to="/">Volver</Link>
+      <Link to="/" className="card__back">
+        Go back
+      </Link>
     </div>
   );
 }

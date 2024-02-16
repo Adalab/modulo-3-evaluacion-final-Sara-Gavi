@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Cargar todos los personajes si hay un filtro de búsqueda activo
+    // UseEffect para Cargar todos los personajes si hay un filtro de búsqueda activo
     if (filterCharacter !== "") {
       fetchAllCharacters().then((data) => {
         setCharacters(data);
@@ -53,6 +53,7 @@ function App() {
     setFilterHouse(value);
   };
 
+  // 4. variables para el html
   const filteredCharactersHouse = characters.filter(
     (character) => character.house === filterHouse
   );
@@ -60,9 +61,6 @@ function App() {
   const filteredCharacters = filteredCharactersHouse.filter((character) =>
     character.name.toLowerCase().includes(filterCharacter.toLowerCase())
   );
-
-  // 4. variables para el html
-
   const findCharacter = (id) => {
     return characters.find((character) => character.id === id);
   };
@@ -91,6 +89,7 @@ function App() {
                   handleFilterCharacter={handleFilterCharacter}
                   handleFilterHouse={handleFilterHouse}
                   selectedHouse={filterHouse} // Pasar el estado de la casa seleccionada
+                  filterCharacter={filterCharacter}
                 />
                 <CharacterList characters={filteredCharacters} />
               </>
