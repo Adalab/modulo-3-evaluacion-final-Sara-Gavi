@@ -9,19 +9,37 @@ function Filters({ handleFilterCharacter, handleFilterHouse, selectedHouse }) {
 
   return (
     <form className="form">
-      <label htmlFor="search">Buscar por nombre:</label>
+      <label htmlFor="search" className="search">
+        Find your character
+      </label>
       <input
         type="text"
         id="search"
-        placeholder="Buscar..."
+        placeholder="Hermione"
         onInput={handleInput}
+        className="input"
       />
-      <label htmlFor="house">Filtrar por casa:</label>
-      <select id="house" onInput={handleInputHouse} value={selectedHouse}>
-        <option value="Gryffindor">Gryffindor</option>
-        <option value="Slytherin">Slytherin</option>
-        <option value="Hufflepuff">Hufflepuff</option>
-        <option value="Ravenclaw">Ravenclaw</option>
+      <label htmlFor="house" className="search">
+        Hogwarts houses
+      </label>
+      <select
+        id="house"
+        className="select"
+        onInput={handleInputHouse}
+        value={selectedHouse}
+      >
+        <option value="Gryffindor" className="value">
+          Gryffindor
+        </option>
+        <option value="Slytherin" className="value">
+          Slytherin
+        </option>
+        <option value="Hufflepuff" className="value">
+          Hufflepuff
+        </option>
+        <option value="Ravenclaw" className="value">
+          Ravenclaw
+        </option>
       </select>
     </form>
   );

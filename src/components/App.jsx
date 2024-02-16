@@ -70,10 +70,18 @@ function App() {
   // 5. El html en el return
   return (
     <div className="page">
-      <header className="header">
-        <h1 className="header__tittle">Harry Potter</h1>
+      <header className="hero">
+        <section className="hero__content">
+          <h1 className="content__title">Harry Potter</h1>
+          <p className="content__slogan">Discover the characters</p>
+          <div className="content__button">
+            <a className="button__a" href="#">
+              ¡Alohomora!
+            </a>
+          </div>
+        </section>
       </header>
-      <main>
+      <main className="main">
         <Routes>
           <Route
             path="/"

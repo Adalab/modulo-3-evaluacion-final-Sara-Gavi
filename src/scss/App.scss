@@ -1,1 +1,121 @@
 @import 'core/reset';
+
+.hero{
+    background-image: url('../images/Owl.png') ; 
+    background-position: center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero__content{
+    margin-top: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content__title{
+  font-family: "Crimson Text", serif;
+  text-align: center;
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #ecdb23;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.31;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px #5e4818;
+}
+
+.content__slogan{
+    font-family: "Crimson Text", serif;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.31;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.content__button{
+
+  background-color:#c39335;
+  padding: 7px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+.content__button:hover{
+  background-color:#3382a6;
+}
+
+.button__a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight:600;
+  font-family: "Crimson Text", serif;
+  letter-spacing: 1.5px;
+}
+
+
+//MAIN
+
+.main{
+    background-color: #99c3d6;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    
+  }
+
+.search{
+   font-family: "Crimson Text", serif;
+   font-size: 25px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   color:rgb(235, 149, 0);
+   font-weight:600;
+}
+
+.select{
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.input{
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #8b8b8b;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.value{
+   font-family: "Crimson Text", serif;
+   font-size: 25px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   color:rgb(235, 212, 0);
+   font-weight:600;
+}
