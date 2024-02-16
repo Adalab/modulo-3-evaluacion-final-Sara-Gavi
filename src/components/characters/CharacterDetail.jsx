@@ -15,7 +15,12 @@ function CharacterDetail({ findCharacter }) {
         alt={character.name}
       />
       <h2>{character.name}</h2>
+      <p>{character.alternate_names}</p>
       <p>{character.species}</p>
+      <p>{character.house}</p>
+      <p>{character.alive ? "Vivo" : "Muerto"}</p>
+      <p>{character.gender}</p>
+
       <Link to="/">Volver</Link>
     </div>
   );

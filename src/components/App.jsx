@@ -5,14 +5,13 @@ import CharacterList from "./characters/CharacterList";
 import Filters from "./filters/Filters";
 import CharacterDetail from "./characters/CharacterDetail";
 
-import { fetchCharacters } from "../services/fetch";
-import ls from "../services/localStorage";
+import { fetchCharacters, fetchAllCharacters } from "../services/fetch";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
   // 1. Variables de estado
 
-  const [characters, setCharacters] = useState(ls.get("characters", []));
+  const [characters, setCharacters] = useState([]);
   const [filterCharacter, setFilterCharacter] = useState("");
 
   // 2. useEffect
@@ -20,19 +19,24 @@ function App() {
   useEffect(() => {
     // Cuando carga la página
 
-    if (!ls.includes("characters")) {
-      fetchCharacters().then((data) => {
+    fetchCharacters().then((data) => {
+      setCharacters(data);
+    });
+  }, []);
+
+  useEffect(() => {
+    // Cargar todos los personajes si hay un filtro de búsqueda activo
+    if (filterCharacter !== "") {
+      fetchAllCharacters().then((data) => {
         setCharacters(data);
-        ls.set("characters", data);
       });
     }
-  }, []);
+  }, [filterCharacter]); // Se ejecutará cada vez que cambie filterCharacter
 
   // 3. funciones de eventos
 
   const handleFilterCharacter = (filterValue) => {
     setFilterCharacter(filterValue);
-    console.log(filterValue);
   };
 
   // Filtrar personajes según el filtro de búsqueda
