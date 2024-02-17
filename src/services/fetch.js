@@ -33,3 +33,22 @@ export function fetchAllCharacters() {
       });
     });
 }
+
+// CODIGO PREPARADO PARA HACER fetch de todos los personajes
+
+/* useEffect(() => {
+    // Cuando carga la página
+
+    fetchCharacters().then((data) => {
+      setCharacters(data);
+    });
+  }, []);
+
+  useEffect(() => {
+    // UseEffect para Cargar todos los personajes si hay un filtro de búsqueda activo
+    if (filterCharacter !== "") {
+      fetchAllCharacters().then((data) => {
+        setCharacters(data);
+      });
+    }
+  }, [filterCharacter]); // Se ejecutará cada vez que cambie filterCharacter*/

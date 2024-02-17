@@ -4,8 +4,6 @@ import "../scss/App.scss";
 import CharacterList from "./characters/CharacterList";
 import Filters from "./filters/Filters";
 import CharacterDetail from "./characters/CharacterDetail";
-
-import { fetchCharacters, fetchAllCharacters } from "../services/fetch";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -17,24 +15,7 @@ function App() {
 
   // 2. useEffect
 
-  useEffect(() => {
-    // Cuando carga la página
-
-    fetchCharacters().then((data) => {
-      setCharacters(data);
-    });
-  }, []);
-
-  useEffect(() => {
-    // UseEffect para Cargar todos los personajes si hay un filtro de búsqueda activo
-    if (filterCharacter !== "") {
-      fetchAllCharacters().then((data) => {
-        setCharacters(data);
-      });
-    }
-  }, [filterCharacter]); // Se ejecutará cada vez que cambie filterCharacter
-
-  // useEffect para cargar personajes cuando cambia filterHouse
+  // useEffect para cargar personajes atendiendo a filterHouse
   useEffect(() => {
     fetch(`https://hp-api.onrender.com/api/characters/house/${filterHouse}`)
       .then((response) => response.json())

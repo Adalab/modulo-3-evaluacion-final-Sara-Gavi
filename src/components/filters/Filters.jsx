@@ -6,11 +6,9 @@ function Filters({
   selectedHouse,
   filterCharacter,
 }) {
-  const [inputValue, setInputValue] = useState(filterCharacter);
-
   const handleInput = (event) => {
     const newValue = event.currentTarget.value;
-    setInputValue(newValue);
+
     handleFilterCharacter(newValue);
   };
 
@@ -29,7 +27,7 @@ function Filters({
         placeholder="Hermione"
         onInput={handleInput}
         className="input"
-        value={inputValue}
+        value={filterCharacter}
       />
       <label htmlFor="house" className="search">
         Hogwarts houses
