@@ -8,20 +8,26 @@ function CharacterDetail({ findCharacter }) {
     "https://via.placeholder.com/210x295/EEEEEE/666666/?text=No+Image";
 
   return (
-    <div className="details">
-      <img
-        className="card__image"
-        src={character.image || placeholderImageURL}
-        alt={character.name}
-      />
-      <h2>{character.name}</h2>
-      <p>{character.alternate_names}</p>
-      <p>{character.species}</p>
-      <p>{character.house}</p>
-      <p>{character.alive ? "Vivo" : "Muerto"}</p>
-      <p>{character.gender}</p>
+    <div className="details__content">
+      <div className="content__card__back">
+        <Link to="/" className="card__back">
+          Go back
+        </Link>
+      </div>
+      <div className="details__card">
+        <img
+          className="card__image"
+          src={character.image || placeholderImageURL}
+          alt={character.name}
+        />
 
-      <Link to="/">Volver</Link>
+        <h2 className="card__name">{character.name}</h2>
+        <p className="card__text">{character.alternate_names}</p>
+        <p className="card__text">{character.species}</p>
+        <p className="card__text">{character.house}</p>
+        <p className="card__text">{character.alive ? "Alive" : "Death"}</p>
+        <p className="card__text">{character.gender}</p>
+      </div>
     </div>
   );
 }

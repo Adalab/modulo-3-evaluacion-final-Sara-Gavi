@@ -13,6 +13,7 @@ function App() {
 
   const [characters, setCharacters] = useState([]);
   const [filterCharacter, setFilterCharacter] = useState("");
+  const [filterHouse, setFilterHouse] = useState("Gryffindor");
 
   // 2. useEffect
 
@@ -25,7 +26,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Cargar todos los personajes si hay un filtro de búsqueda activo
+    // UseEffect para Cargar todos los personajes si hay un filtro de búsqueda activo
     if (filterCharacter !== "") {
       fetchAllCharacters().then((data) => {
         setCharacters(data);
@@ -33,19 +34,33 @@ function App() {
     }
   }, [filterCharacter]); // Se ejecutará cada vez que cambie filterCharacter
 
+  // useEffect para cargar personajes cuando cambia filterHouse
+  useEffect(() => {
+    fetch(`https://hp-api.onrender.com/api/characters/house/${filterHouse}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setCharacters(data);
+      });
+  }, [filterHouse]);
+
   // 3. funciones de eventos
 
   const handleFilterCharacter = (filterValue) => {
     setFilterCharacter(filterValue);
   };
 
-  // Filtrar personajes según el filtro de búsqueda
-  const filteredCharacters = characters.filter((character) =>
-    character.name.toLowerCase().includes(filterCharacter.toLowerCase())
-  );
+  const handleFilterHouse = (value) => {
+    setFilterHouse(value);
+  };
 
   // 4. variables para el html
+  const filteredCharactersHouse = characters.filter(
+    (character) => character.house === filterHouse
+  );
 
+  const filteredCharacters = filteredCharactersHouse.filter((character) =>
+    character.name.toLowerCase().includes(filterCharacter.toLowerCase())
+  );
   const findCharacter = (id) => {
     return characters.find((character) => character.id === id);
   };
@@ -53,16 +68,29 @@ function App() {
   // 5. El html en el return
   return (
     <div className="page">
-      <header className="header">
-        <h1 className="header__tittle">Harry Potter</h1>
+      <header className="hero">
+        <section className="hero__content">
+          <h1 className="content__title">Harry Potter</h1>
+          <p className="content__slogan">Discover the characters</p>
+          <div className="content__button">
+            <a className="button__a" href="#">
+              ¡Alohomora!
+            </a>
+          </div>
+        </section>
       </header>
-      <main>
+      <main className="main">
         <Routes>
           <Route
             path="/"
             element={
               <>
-                <Filters handleFilterCharacter={handleFilterCharacter} />
+                <Filters
+                  handleFilterCharacter={handleFilterCharacter}
+                  handleFilterHouse={handleFilterHouse}
+                  selectedHouse={filterHouse} // Pasar el estado de la casa seleccionada
+                  filterCharacter={filterCharacter}
+                />
                 <CharacterList characters={filteredCharacters} />
               </>
             }

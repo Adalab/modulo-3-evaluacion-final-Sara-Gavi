@@ -10,7 +10,6 @@ function CharacterList({ characters }) {
   });
   return (
     <section className="characters">
-      <h2 className="characters__title title--medium">Lista de personajes</h2>
       <ul className="cards">{renderCharacters}</ul>
     </section>
   );
