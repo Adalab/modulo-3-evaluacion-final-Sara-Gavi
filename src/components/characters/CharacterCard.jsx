@@ -6,7 +6,7 @@ function CharacterCard({ character }) {
 
   return (
     <Link to={"/character/" + character.id}>
-      <div className="card">
+      <div className="card__character">
         <img
           className="card__image"
           src={character.image || placeholderImageURL}
