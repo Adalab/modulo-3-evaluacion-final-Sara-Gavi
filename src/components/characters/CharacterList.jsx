@@ -10,7 +10,13 @@ function CharacterList({ characters }) {
   });
   return (
     <section className="characters">
-      <ul className="cards">{renderCharacters}</ul>
+      {renderCharacters.length > 0 ? (
+        <ul className="cards">{renderCharacters}</ul>
+      ) : (
+        <p className="cards__message">
+          Oops! The character is not in this house{" "}
+        </p>
+      )}
     </section>
   );
 }
