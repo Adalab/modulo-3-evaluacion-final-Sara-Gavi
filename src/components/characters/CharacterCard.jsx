@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom";
+import imageCard from "../../images/imagencarta.png";
 
 function CharacterCard({ character }) {
-  const placeholderImageURL =
-    "https://via.placeholder.com/210x295/EEEEEE/666666/?text=No+Image";
-
   return (
     <Link to={"/character/" + character.id}>
       <div className="card__character">
         <img
           className="card__image"
-          src={character.image || placeholderImageURL}
+          src={character.image || imageCard}
           alt={character.name}
         />
         <h2 className="card__name">{character.name}</h2>

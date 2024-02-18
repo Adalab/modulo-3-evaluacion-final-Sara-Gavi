@@ -1,13 +1,12 @@
 import PropTypes from "prop-types";
 //useParams ara obtener el ID del personaje
 import { Link, useParams } from "react-router-dom";
+import imageCard from "../../images/imagencarta.png";
 
 //Utiliza la función findCharacter para encontrar y mostrar los detalles del personaje
 function CharacterDetail({ findCharacter }) {
   const params = useParams();
   const character = findCharacter(params.id);
-  const placeholderImageURL =
-    "https://via.placeholder.com/210x295/EEEEEE/666666/?text=No+Image";
 
   return (
     <div className="details__content">
@@ -19,7 +18,7 @@ function CharacterDetail({ findCharacter }) {
       <div className="details__card">
         <img
           className="card__image"
-          src={character.image || placeholderImageURL}
+          src={character.image || imageCard}
           alt={character.name}
         />
 
