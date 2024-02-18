@@ -251,7 +251,8 @@
 
   .form__content{
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: row;
   }
 
 }
@@ -266,10 +267,10 @@
     grid-template-columns: repeat(3, 1fr); 
   }
  
-
   .form__content{
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: row;
   }
 
 }

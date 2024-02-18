@@ -2,7 +2,7 @@
 
 ## Descripción
 
-En este emocionante proyecto, te sumergirás en el universo mágico de Harry Potter, donde podrás descubrir y explorar información sobre tus personajes favoritos. Utilizando React, una poderosa biblioteca de JavaScript para la construcción de interfaces de usuario, hemos creado una página web interactiva que te permitirá sumergirte en el mundo de la magia.
+En este emocionante proyecto, te sumergirás en el universo mágico de Harry Potter, donde podrás descubrir información sobre tus personajes favoritos. Con la ayuda de React, una poderosa biblioteca de JavaScript para la construcción de interfaces de usuario que te permitirá sumergirte en el mundo de la magia.
 
 ![Captura de la landing](src/images/capturaHarry.png)
 
@@ -10,7 +10,7 @@ En este emocionante proyecto, te sumergirás en el universo mágico de Harry Pot
 
 ### 1. Listado de Personajes
 
-En la página principal, encontrarás un extenso listado de los fascinantes personajes de Harry Potter. Información de cada personaje, incluyendo su foto, nombre y especie. ¡Prepárate para explorar la magia que rodea a cada uno de ellos!
+Encontrarás un listado de los personajes de Harry Potter. Información de cada personaje, incluyendo su foto, nombre y especie. ¡Prepárate para explorar la magia que rodea a cada uno de ellos!
 
 ### 2. Filtrado por Nombre
 
