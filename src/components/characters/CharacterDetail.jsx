@@ -12,7 +12,7 @@ function CharacterDetail({ findCharacter }) {
     <div className="details__content">
       <div className="content__card__back">
         <Link to="/" className="card__back">
-          Go back
+          Time Turner
         </Link>
       </div>
       <div className="details__card">

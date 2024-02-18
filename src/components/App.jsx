@@ -40,6 +40,13 @@ function App() {
     setFilterHouse(value);
   };
 
+  //Reset para volver al listado inicial
+  const handleResetFilters = (event) => {
+    event.preventDefault();
+    setFilterCharacter("");
+    setFilterHouse("Gryffindor");
+  };
+
   // 4. variables para el html
   //Filtra los personajes por Casa
   const filteredCharactersHouse = characters.filter(
@@ -70,6 +77,7 @@ function App() {
                   handleFilterHouse={handleFilterHouse}
                   selectedHouse={filterHouse} // Pasar el estado de la casa seleccionada
                   filterCharacter={filterCharacter} //Pasar el estado del personaje seleccionado
+                  handleResetFilters={handleResetFilters}
                 />
                 <CharacterList characters={filteredCharacters} />
               </>
