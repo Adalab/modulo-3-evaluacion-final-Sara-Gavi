@@ -1,4 +1,5 @@
 import CharacterCard from "./CharacterCard";
+import PropTypes from "prop-types";
 
 //Renderiza la lista de cartas de personajes
 function CharacterList({ characters }) {
@@ -21,5 +22,9 @@ function CharacterList({ characters }) {
     </section>
   );
 }
+
+CharacterList.propTypes = {
+  characters: PropTypes.array,
+};
 
 export default CharacterList;

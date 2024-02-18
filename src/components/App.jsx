@@ -69,7 +69,7 @@ function App() {
                   handleFilterCharacter={handleFilterCharacter}
                   handleFilterHouse={handleFilterHouse}
                   selectedHouse={filterHouse} // Pasar el estado de la casa seleccionada
-                  filterCharacter={filterCharacter}
+                  filterCharacter={filterCharacter} //Pasar el estado del personaje seleccionado
                 />
                 <CharacterList characters={filteredCharacters} />
               </>

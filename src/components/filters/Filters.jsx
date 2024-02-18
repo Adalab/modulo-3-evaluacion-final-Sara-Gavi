@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function Filters({
   handleFilterCharacter,
   handleFilterHouse,
@@ -53,5 +55,12 @@ function Filters({
     </form>
   );
 }
+
+Filters.propTypes = {
+  handleFilterCharacter: PropTypes.func.isRequired,
+  handleFilterHouse: PropTypes.func.isRequired,
+  selectedHouse: PropTypes.string.isRequired,
+  filterCharacter: PropTypes.string.isRequired,
+};
 
 export default Filters;
