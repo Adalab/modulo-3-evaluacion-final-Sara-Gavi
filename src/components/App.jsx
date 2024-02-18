@@ -4,6 +4,7 @@ import "../scss/App.scss";
 import CharacterList from "./characters/CharacterList";
 import Filters from "./filters/Filters";
 import CharacterDetail from "./characters/CharacterDetail";
+import Header from "./Header";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -49,17 +50,7 @@ function App() {
   // 5. El html en el return
   return (
     <div className="page">
-      <header className="hero">
-        <section className="hero__content">
-          <h1 className="content__title">Harry Potter</h1>
-          <p className="content__slogan">Discover the characters</p>
-          <div className="content__button">
-            <a className="button__a" href="#">
-              ¡Alohomora!
-            </a>
-          </div>
-        </section>
-      </header>
+      <Header />
       <main className="main">
         <Routes>
           <Route
