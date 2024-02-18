@@ -4,6 +4,7 @@ function Filters({
   selectedHouse,
   filterCharacter,
 }) {
+  //Define dos funciones de manejo de eventos para actualizar los estados de filtro
   const handleInput = (event) => {
     const newValue = event.currentTarget.value;
 

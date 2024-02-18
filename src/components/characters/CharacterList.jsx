@@ -1,5 +1,6 @@
 import CharacterCard from "./CharacterCard";
 
+//Renderiza la lista de cartas de personajes
 function CharacterList({ characters }) {
   const renderCharacters = characters.map((character) => {
     return (
@@ -9,7 +10,7 @@ function CharacterList({ characters }) {
     );
   });
   return (
-    <section className="characters">
+    <section className="characters" id="scroll">
       {renderCharacters.length > 0 ? (
         <ul className="cards">{renderCharacters}</ul>
       ) : (

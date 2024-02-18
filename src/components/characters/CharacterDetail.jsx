@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
+//useParams ara obtener el ID del personaje
 import { Link, useParams } from "react-router-dom";
 
+//Utiliza la función findCharacter para encontrar y mostrar los detalles del personaje
 function CharacterDetail({ findCharacter }) {
   const params = useParams();
   const character = findCharacter(params.id);
