@@ -87,6 +87,20 @@
   //MEDIA QUERYS
   
   @media (min-width:768px){
+
+    .hero__content{
+      margin-top: 15rem;
+      
+  }
+
+  .content__title{
+    font-size: 4.5rem;
+  }
+
+  .button__a{
+    font-size: 1.5rem;
+  }
+  
   
     .details{
       display: grid;
@@ -108,6 +122,18 @@
   }
   
   @media (min-width:1200px){
+
+    .hero__content{
+      margin-top: 15rem;
+  }
+
+  .content__title{
+    font-size: 4.5rem;
+  }
+
+  .button__a{
+    font-size: 1.5rem;
+  }
     .details{
       display: grid;
       grid-template-columns: repeat(3, 1fr); 
