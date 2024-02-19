@@ -1,4 +1,4 @@
-import { HashLink } from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link"; //habilitar el desplazamiento suave a través de fragmentos de hash
 
 function Header() {
   return (

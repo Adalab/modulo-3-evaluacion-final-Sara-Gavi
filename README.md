@@ -10,7 +10,7 @@ En este emocionante proyecto, te sumergirás en el universo mágico de Harry Pot
 
 ### 1. Listado de Personajes
 
-Encontrarás un listado de los personajes de Harry Potter. Información de cada personaje, incluyendo su foto, nombre y especie. ¡Prepárate para explorar la magia que rodea a cada uno de ellos!
+¡Haz clic en Alohomora y serás transportado suavemente a la sección donde podrás descubrir a todos los personajes de Harry Potter! Encontrarás información de cada personaje, incluyendo su foto, nombre y especie. ¡Prepárate para explorar la magia que rodea a cada uno de ellos!
 
 ### 2. Filtrado por Nombre
 
@@ -31,6 +31,7 @@ Al hacer clic en la tarjeta de un personaje, podrás acceder a información deta
 - Hooks para las peticiones al servidor
 - Uso de props para pasar datos a componentes hijos
 - Uso de eventos en React para atender a interacciones del usuario
+- React Router HashLink: para facilitar el desplazamiento suave a través de fragmentos de hash en la aplicación.
 - Utilización de métodos funcionales de array (map, filter, etc.)
 - Validación de props utilizando defaultProps y propTypes
 
