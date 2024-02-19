@@ -19,7 +19,7 @@ function Filters({
   };
 
   return (
-    <form className="form">
+    <form className="form" id="scroll">
       <div className="form__content">
         <label htmlFor="search" className="search">
           Find your character

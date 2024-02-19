@@ -11,7 +11,7 @@ function CharacterList({ characters }) {
     );
   });
   return (
-    <section className="characters" id="scroll">
+    <section className="characters">
       {renderCharacters.length > 0 ? (
         <ul className="cards">{renderCharacters}</ul>
       ) : (
